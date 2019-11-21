@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <title>iFlash</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+      <div class="headerLogo">
+        <h1>iFlash</h1>
+      </div>
+      <div class="headerInstructions">
+        <h2>HI 👋 Welcome to your personal flashcard maker</h2>
+      </div>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <!-- <div class="row"> -->
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Profile</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <!-- <strong>id</strong>: <%= user._id %><br> -->
+                        <strong>Hi!</strong> <%= user.local.email %><br>
+                        <!-- <strong>password</strong>: <%= user.local.password %> -->
+                    </p>
+                    <h3>The rules are simple.<br/>1st Choose a title.<br/>2nd Type up your notes💻<br/>When your done simply click on the 🗑️</h3>
+                    <h6>ps. If you dont finish studying 📚 <br/> Come back later and your custom flashcards will still be here ＼＿ﾍ(◕‿◕ )</h6>
+
+                    <a href="/unlink/local" class="btn btn-default">DELETE</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+        <div class="coverPhoto">
+          <img src="img/By-baranq_HOW-TO-PAY-BILLS-ONLINE.jpg" alt="person paying there bills" class="payingBillsPic">
+
+        <div class="col-sm-6">
+          <h2>Bills to </h2>
+          <h3>Add Notes</h3>
+        <% if (user.local.email) { %>
+          <form action="/notes" method="POST" class="notePad">
+            <span>Notes Title</span>
+            <textarea type="text" placeholder="notes" name="name" value=""></textarea>
+            <span>Notes</span>
+            <textarea type="text" placeholder="notes" name="notes" value=""></textarea>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %>
+
+
+          <h4 class="billTotal" ></h4>
+          <% if (user.local.email) { %>
+            <span class="getYourTotal">Click for total</span>
+
+          <% } %>
+          <div>
+            <section class="listOfFlashcards">
+              <% for(var i=1; i<notes.length; i++) {%>
+              <ul class="card">
+                <span><%= notes[i].name %></span><span class="trash">🗑️</span>
+                <li><%= notes[i].notes %></li>
+              </ul>
+              <% } %>
+            </section>
+          </div>
+
+</div>
+<footer>
+  <a href="/profile">TOP</a>
+</footer>
+<script src="main.js"></script>
+
+</body>
+</html>
