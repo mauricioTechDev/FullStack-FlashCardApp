@@ -41,22 +41,23 @@ module.exports = function(app, passport, db, ObjectId) {
         res.redirect('/profile')
       })
     })
-
-    app.put('/notes', (req, res) => {
-      console.log(req)
-      db.collection('notes')
-      .findOneAndUpdate({name: req.body.name, notes: req.body.notes}, {
-        $set: {
-          thumbUp:req.body.thumbUp
-        }
-      }, {
-        sort: {_id: -1},
-        upsert: true
-      }, (err, result) => {
-        if (err) return res.send(err)
-        res.send(result)
-      })
-    })
+    
+    //
+    // app.put('/notes', (req, res) => {
+    //   console.log(req)
+    //   db.collection('notes')
+    //   .findOneAndUpdate({name: req.body.name, notes: req.body.notes}, {
+    //     $set: {
+    //       thumbUp:req.body.thumbUp
+    //     }
+    //   }, {
+    //     sort: {_id: -1},
+    //     upsert: true
+    //   }, (err, result) => {
+    //     if (err) return res.send(err)
+    //     res.send(result)
+    //   })
+    // })
 
     // app.put('/addTotal',(req, res)=> {
     //   db.collection('messages').findOneAndUpdate({createdBy: req.user._id})

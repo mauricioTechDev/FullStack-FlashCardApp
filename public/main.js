@@ -1,33 +1,33 @@
 var thumbUp = document.getElementsByClassName("fa-thumbs-up");
 var trash = document.getElementsByClassName("trash");
 
-Array.from(thumbUp).forEach(function(element) {
-      element.addEventListener('click', function(){
-        const name = this.parentNode.parentNode.childNodes[1].innerText
-        const price = this.parentNode.parentNode.childNodes[3].innerText
-        const thumbUp = this.parentNode.parentNode.childNodes[5].innerText
-        console.log(price)
-        // allows to reach server from main JS with this fetch
-        // then a put for win to say how theny win
-        // then a put for loose to sya how much they loose
-        fetch('messages', {
-          method: 'put',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({
-            'name': name,
-            'price': price,
-            'thumbUp':"PAID!"
-          })
-        })
-        .then(response => {
-          if (response.ok) return response.json()
-        })
-        .then(data => {
-          console.log(data)
-          window.location.reload(true)
-        })
-      });
-});
+// Array.from(thumbUp).forEach(function(element) {
+//       element.addEventListener('click', function(){
+//         const name = this.parentNode.parentNode.childNodes[1].innerText
+//         const price = this.parentNode.parentNode.childNodes[3].innerText
+//         const thumbUp = this.parentNode.parentNode.childNodes[5].innerText
+//         console.log(price)
+//         // allows to reach server from main JS with this fetch
+//         // then a put for win to say how theny win
+//         // then a put for loose to sya how much they loose
+//         fetch('messages', {
+//           method: 'put',
+//           headers: {'Content-Type': 'application/json'},
+//           body: JSON.stringify({
+//             'name': name,
+//             'price': price,
+//             'thumbUp':"PAID!"
+//           })
+//         })
+//         .then(response => {
+//           if (response.ok) return response.json()
+//         })
+//         .then(data => {
+//           console.log(data)
+//           window.location.reload(true)
+//         })
+//       });
+// });
 
 
 Array.from(trash).forEach(function(element) {
@@ -47,7 +47,7 @@ Array.from(trash).forEach(function(element) {
             'notes': notes
           })
         }).then(function (response) {
-          // window.location.reload()
+          window.location.reload()
         })
       });
 });
@@ -80,9 +80,7 @@ ul.addEventListener("click", (el) => {
   if (el.target.tagName === "LI"){
     // cross a line through el
     el.target.classList.toggle("clearCompletedItems")
-    // let completedNumber = document.getElementsByClassName("clearCompletedItems").length
-    // let totalNumber = count - completedNumber
-    // document.querySelector("#activeTasks").innerHTML = totalNumber
+
   }
 })
 
