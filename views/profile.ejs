@@ -33,7 +33,7 @@
                     <h3>The rules are simple.<br/>Choose a title.<br/>Type up your notes 💻<br/>When your done throw the card in the 🗑️</h3>
                     <h6>ps. If you dont finish studying 📚 <br/> Come back later and your custom flashcards will still be here ＼＿ﾍ(◕‿◕ )</h6>
 
-                    <a href="/unlink/local" class="btn btn-default">DELETE</a>
+                    <a href="/unlink/local" class="btn btn-default">**click to delete account**</a>
                 <% } else { %>
                     <a href="/connect/local" class="btn btn-default">Connect Local</a>
                 <% } %>
@@ -52,23 +52,23 @@
             <textarea type="text" placeholder="notes" name="name" value=""></textarea>
             <span>Notes</span>
             <textarea type="text" placeholder="notes" name="notes" value=""></textarea>
-            <button type="submit">Submit</button>
+            <button class="submitButton" type="submit">Submit</button>
           </form>
         </div>
         <% } %>
 
 
-          <h4 class="billTotal" ></h4>
+          <!-- <h4 class="billTotal" ></h4>
           <% if (user.local.email) { %>
             <span class="getYourTotal">Click for total</span>
 
-          <% } %>
+          <% } %> -->
           <div>
             <section class="listOfFlashcards">
               <% for(var i=1; i<notes.length; i++) {%>
               <ul class="card">
-                <span><%= notes[i].name %></span><span class="trash">🗑️</span>
-                <li><%= notes[i].notes %></li>
+                <span contenteditable="true"><%= notes[i].name %></span><span class="trash">🗑️</span>
+                <li contenteditable="true"><%= notes[i].notes %></li>
               </ul>
               <% } %>
             </section>

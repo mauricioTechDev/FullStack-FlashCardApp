@@ -83,6 +83,17 @@ ul.addEventListener("click", (el) => {
 
   }
 })
+// let totalButton = document.querySelector(".submitButton")
+// totalButton.addEventListener('click', function(){
+//   fetch("/numberOfCards")
+//   .then(res => res.json())
+//   .then(response => {
+//     console.log(response)
+//     total.innerHTML = response.totalBills
+//   })
+//   .catch(err => console.log(err))
+//   // total.innerHTML = total
+//   })
 
 
 

@@ -34,14 +34,32 @@ module.exports = function(app, passport, db, ObjectId) {
 // message board routes ===============================================================
 
     app.post('/notes', (req, res) => {
-      db.collection('notes').save({name: req.body.name, notes: req.body.notes, createdBy: req.user._id}, (err, result) => {
+      db.collection('notes').save({name: req.body.name, notes: req.body.notes, createdBy: req.user._id, cardNum: req.user.cardNum}, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
 
         res.redirect('/profile')
       })
     })
-    
+
+
+
+    // app.get('/numberOfCards', (req, res) => {
+    //   let total = 0
+    //   var uId = req.user._id
+    //   db.collection('notes').find({createdBy: uId}).toArray((err, result) => {
+    //       result.forEach(el => {
+    //         // in the array
+    //         total += parseFloat(el.cardNum);
+    //         console.log(el)
+    //       });
+    //       res.write(JSON.stringify({
+    //         cardNum: parseFloat(total)
+    //       }));
+    //       res.end()
+    //   })
+    // });
+
     //
     // app.put('/notes', (req, res) => {
     //   console.log(req)
