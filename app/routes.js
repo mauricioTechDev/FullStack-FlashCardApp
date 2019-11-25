@@ -43,30 +43,37 @@ module.exports = function(app, passport, db, ObjectId) {
     })
 
 
+  //   app.put("/flashcards", (req, res) => {
+  //   console.log(ObjectId(req.body._id));
+  //   console.table(req.body);
+  //   db.collection("Flash Cards").findOneAndUpdate(
+  //     { createdBy: req.body._id },
+  //     {
+  //       $set: {
+  //         name: req.body.name,
+  //         notes: req.body.notes
+  //       }
+  //     },
+  //     { new: true },
+  //     (err, result) => {
+  //       if (err) {
+  //         console.log("err", err);
+  //         return res.send(err);
+  //       }
+  //       console.log("res", result);
+  //       res.send(result);
+  //     }
+  //   );
+  // });
 
-    // app.get('/numberOfCards', (req, res) => {
-    //   let total = 0
-    //   var uId = req.user._id
-    //   db.collection('notes').find({createdBy: uId}).toArray((err, result) => {
-    //       result.forEach(el => {
-    //         // in the array
-    //         total += parseFloat(el.cardNum);
-    //         console.log(el)
-    //       });
-    //       res.write(JSON.stringify({
-    //         cardNum: parseFloat(total)
-    //       }));
-    //       res.end()
-    //   })
-    // });
 
-    //
     // app.put('/notes', (req, res) => {
     //   console.log(req)
     //   db.collection('notes')
-    //   .findOneAndUpdate({name: req.body.name, notes: req.body.notes}, {
+    //   .findOneAndUpdate({createdBy: req.user._id}, {
     //     $set: {
-    //       thumbUp:req.body.thumbUp
+    //       name: req.body.name,
+    //       notes: req.body.notes,
     //     }
     //   }, {
     //     sort: {_id: -1},

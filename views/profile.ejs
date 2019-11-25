@@ -52,7 +52,7 @@
             <textarea type="text" placeholder="notes" name="name" value=""></textarea>
             <span>Notes</span>
             <textarea type="text" placeholder="notes" name="notes" value=""></textarea>
-            <button class="submitButton" type="submit">Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </div>
         <% } %>
@@ -67,8 +67,9 @@
             <section class="listOfFlashcards">
               <% for(var i=1; i<notes.length; i++) {%>
               <ul class="card">
-                <span contenteditable="true"><%= notes[i].name %></span><span class="trash">🗑️</span>
+                <span contenteditable="true" ><%= notes[i].name %></span><span class="trash">🗑️</span>
                 <li contenteditable="true"><%= notes[i].notes %></li>
+                <span class="edit">EDIT</span>
               </ul>
               <% } %>
             </section>
