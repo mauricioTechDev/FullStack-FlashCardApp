@@ -4,8 +4,8 @@
 
 ### While in their account they can create headers for their notes and content. They can easily click on the cards to flip them over.  When they have finished studying just simply click on the trash can to throw the card away.
 
-![alt text]()
-![alt text](
+![alt text](login-screenShot.png)
+![alt text](profile-screenshot.png)
 
 ## Tech Used:
 - HTML5
