@@ -1,4 +1,4 @@
-#  ✏️ Roulette-App
+#  ✏️ FullStack-FlashCardApp
 
 ### This application allows user to log in under their individual accounts and save their flash cards under their email.  They can then enter anytime in the future and study their cards.
 
