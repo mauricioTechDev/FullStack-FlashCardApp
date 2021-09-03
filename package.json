@@ -21,7 +21,7 @@
     "mongodb": "^3.3.4",
     "mongoose": "^5.7.12",
     "morgan": "^1.9.1",
-    "mpath": "^0.6.0",
+    "mpath": "^0.8.4",
     "node-fetch": "^2.6.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
